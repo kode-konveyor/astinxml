@@ -1,5 +1,5 @@
 from xml.dom.minidom import Document
-from posixpath import split, join
+from posixpath import join, basename
 from os.path import isdir, isfile
 from posix import listdir
 from astinxml.Visitor import Visitor
@@ -11,7 +11,7 @@ class Documenter(object):
 
     def createElement(self, path, parent, name):
         xmlNode = self.document.createElement(name)
-        xmlNode.setAttribute('name', split(path)[-1])
+        xmlNode.setAttribute('name', basename(path))
         parent.appendChild(xmlNode)
         return xmlNode
 
@@ -22,11 +22,10 @@ class Documenter(object):
         if(isdir(path)):
             for fileName in listdir(path):
                 fullPath = join(path, fileName)
-                if fileName[0] != '_':
-                    if isfile(fullPath):
-                        self.astParse(fullPath, xmlNode)
-                    elif isdir(fullPath):
-                        self.parse_module(fullPath, xmlNode)
+                if isfile(fullPath) and fullPath[-3:] == '.py':
+                    self.astParse(fullPath, xmlNode)
+                elif isdir(fullPath):
+                    self.parse_module(fullPath, xmlNode)
         return self.document
     
     def astParse(self, path, parent):
@@ -35,4 +34,4 @@ class Documenter(object):
             content = file.read()
         tree = ast.parse(content,path)
         visitor.visit(tree)
-        visitor.lastNode.setAttribute('name', split(path)[-1])
+        visitor.lastNode.setAttribute('name', basename(path))

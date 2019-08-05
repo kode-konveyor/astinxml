@@ -1,0 +1,18 @@
+<checks>
+<check
+		title="Model Errors"
+      	modelfile="astinxml.rich"
+      	modelbasepath="//error"
+      	modelnamepath="@type"
+      	modelvaluepath="concat(//element[@id=current()/@element]/@name,' ',@name)"
+        modelerrorid="$p1/object/error/@errorID"
+      	inputfile="astinxml.rich"
+      	inputbasepath="//nonexistent"
+      	inputnamepath=""
+      	inputvaluepath=""
+        inputerrorid="$p1"
+        errorURL="concat('http://example.com/model.html#',$p1)"
+        errortitlestring="zenta:modelErrorTitle($p1,$p2)"
+        errordescription="zenta:modelErrorDescription($p1,$p2)"
+      	/>
+</checks>

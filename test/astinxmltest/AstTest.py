@@ -30,6 +30,9 @@ class Test(unittest.TestCase):
     def test_subpackage_is_documented(self):
         self.assertEqual(1, len(self.etree.findall(".//package[@name='testPackage']")))
 
+    def test_sub_subpackage_is_documented(self):
+        self.assertEqual(1, len(self.etree.findall(".//package[@name='testPackage']/package[@name='testSubPackage']")))
+
     def test_module_is_documented(self):
         self.assertEqual(1, len(self.etree.findall(
             ".//package[@name='testPackage']/Module[@name='DocumentedService.py']")))
