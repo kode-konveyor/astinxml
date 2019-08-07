@@ -4,9 +4,12 @@ export GITHUB_ORGANIZATION=kode-konveyor
 
 #rules.python
 
-all: deliver zentaworkaround $(MODEL_BASENAME).compiled 
+all: deliver documentation
 
 #include rules.zenta
+
+documentation: zentaworkaround $(MODEL_BASENAME).compiled
+	mv $(MODEL_BASENAME) shippable
 
 deliver: compile
 	mv dist shippable
