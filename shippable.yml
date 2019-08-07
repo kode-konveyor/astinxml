@@ -2,6 +2,9 @@ build_image: kodekonveyor/toolchain:master
 language: python
 python:
   - 2.7
+integrations:
+  generic:
+    - integrationName: kkpipeline
 
 build:
   cache: true
