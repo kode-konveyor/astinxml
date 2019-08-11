@@ -33,7 +33,7 @@ mutationtest:
 	python3 -m mutmut run
 	touch mutationtest
 
-publish_release: deliver
+publish_release:
 	python3 -m twine upload shippable/dist/*
 
 clean:
