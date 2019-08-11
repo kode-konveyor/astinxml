@@ -5,7 +5,7 @@ python:
 integrations:
   generic:
     - integrationName: kkpipeline
-    - integrationName: pypi_astinxml
+    - integrationName: py_astinxml
 
 build:
   cache: true
