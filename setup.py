@@ -19,7 +19,7 @@ setuptools.setup(
      version=version,
      author="Arpad Magosanyi",
      author_email="mag@kodekonveyor.com",
-     description="Winterboot is not SpringBoot",
+     description="Obtains the AST of a project and dumps it in XML.",
      long_description=long_description,
      long_description_content_type="text/markdown",
      url="https://github.com/kode-konveyor/astinxml",
