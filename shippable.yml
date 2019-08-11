@@ -5,6 +5,7 @@ python:
 integrations:
   generic:
     - integrationName: kkpipeline
+  generic:
     - integrationName: pypi_astinxml
 
 build:
