@@ -34,6 +34,7 @@ mutationtest:
 	touch mutationtest
 
 publish_release:
+	cat ~/.pypirc
 	python3 -m twine upload shippable/dist/*
 
 clean:
