@@ -6,6 +6,9 @@ integrations:
   generic:
     - integrationName: kkpipeline
     - integrationName: py_astinxml
+  key:
+    - integrationName: kodekonveyor
+      type: sshKey
 
 build:
   cache: true
