@@ -27,6 +27,8 @@ astinxml.pdf
 astinxml.pics/
 astinxml.tabled.docbook
 astinxml.tabled.html
+astinxml.interfaces
+astinxml.testdata
 astinxml/
 inputs/
 target/
